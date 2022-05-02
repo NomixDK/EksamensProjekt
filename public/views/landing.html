@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- META -->
+    <title>Flower Clicker</title>
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="/css/main.css">
+</head>
+<body onload="PageLoad()">
+    <div class="wrapper">
+
+        <div class="container1">
+            <div id="navBar">
+                <a class="navBarText" onclick="Save()">Save</a>
+                <a class="navBarText" onclick="href='/settings'">Settings</a>
+                <a class="navBarText" onclick="href='/leaderboard'">Leaderboard</a>
+            </div>
+        </div>
+
+        <div class="container2">
+            <div id="navBar2">
+                <h1 id="ScoreText">error</h1>
+                <a id="ScoreText2">error</a>
+                <h1 id="nameText" onclick="Rename()"></h1>
+                <canvas></canvas>
+                <div style="display:none;">
+                    <img id="source1"
+                         src="/img/Flower1.png">
+
+                </div>
+                <img id="FlowerImg" src="/img/Seeds.png" onclick="Clicker()" />
+            </div>
+        </div>
+
+        <div class="container3">
+
+        </div>
+
+        <div class="container4">
+            <button id="amountBtn" onclick="AmountChange()">error</button>
+
+            <div id="unitContainer">
+
+                <div class="unitContainer2" onclick="PlantContainer.buy()">
+                    <a class="unitText">Plant Containers</a>
+                    <a class="unitText2" id="PlantContainerText">error</a>
+                    <a class="unitText3" id="PlantContainerText2">error</a>
+                </div>
+
+                <div class="unitContainer2" onclick="FrontGarden.buy()">
+                    <a class="unitText">Front Gardens</a>
+                    <a class="unitText2" id="FrontGardenText">error</a>
+                    <a class="unitText3" id="FrontGardenText2">error</a>
+                </div>
+
+                <div class="unitContainer2" onclick="BackGarden.buy()">
+                    <a class="unitText">Back Gardens</a>
+                    <a class="unitText2" id="BackGardenText">error</a>
+                    <a class="unitText3" id="BackGardenText2">error</a>
+                </div>
+
+                <div class="unitContainer2" onclick="Greenhouse.buy()">
+                    <a class="unitText">Greenhouses</a>
+                    <a class="unitText2" id="GreenhouseText">error</a>
+                    <a class="unitText3" id="GreenhouseText2">error</a>
+                </div>
+
+                <div class="unitContainer2" onclick="CommunityGarden.buy()">
+                    <a class="unitText">Community Gardens</a>
+                    <a class="unitText2" id="CommunityGardenText">error</a>
+                    <a class="unitText3" id="CommunityGardenText2">error</a>
+                </div>
+
+                <div class="unitContainer2" onclick="Field.buy()">
+                    <a class="unitText">Fields</a>
+                    <a class="unitText2" id="FieldText">error</a>
+                    <a class="unitText3" id="FieldText2">error</a>
+                </div>
+
+                <div class="unitContainer2" onclick="Country.buy()">
+                    <a class="unitText">Countries</a>
+                    <a class="unitText2" id="CountryText">error</a>
+                    <a class="unitText3" id="CountryText2">error</a>
+                </div>
+
+                <div class="unitContainer2" onclick="Continent.buy()">
+                    <a class="unitText">Continents</a>
+                    <a class="unitText2" id="ContinentText">error</a>
+                    <a class="unitText3" id="ContinentText2">error</a>
+                </div>
+
+                <div class="unitContainer2" onclick="Planet.buy()">
+                    <a class="unitText">Planets</a>
+                    <a class="unitText2" id="PlanetText">error</a>
+                    <a class="unitText3" id="PlanetText2">error</a>
+                </div>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    <!-- SCRIPTS -->
+    <script src="/js/main.js"></script>
+    <script>
+        //BEFORE UNLOAD FUNCTION
+        window.onbeforeunload = function () {
+            Save();
+        };
+    </script>
+</body>
+</html>

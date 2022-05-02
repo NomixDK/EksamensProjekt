@@ -1,0 +1,157 @@
+body {
+    background-image: url('/img/Background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+a {
+    font-family: 'Comic Sans MS';
+    user-select:none;
+    color:white;
+}
+
+h1 {
+    font-family: 'Comic Sans MS';
+    user-select: none;
+    color: white;
+}
+.wrapper {
+    display: grid;
+    border: 5px solid #4D596D;
+    height: 97vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 11fr;
+    background-color: rgb(27, 39, 59, 0.8);
+}
+
+.container1 {
+    border: 2px solid #4D596D;
+    grid-column-start: 1;
+    grid-column-end: 4;
+}
+
+.container2 {
+    border: 2px solid #4D596D;
+    position:relative;
+
+}
+
+.container3 {
+    border: 2px solid #4D596D;
+}
+
+.container4 {
+    border: 2px solid #4D596D;
+    overflow: hidden;
+}
+
+#unitContainer {
+    width: 100%;
+    max-height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+}
+
+#amountBtn {
+    padding: 0px;
+    width: 100%;
+}
+
+.unitContainer2 {
+    width: 100%;
+    height: 100px;
+    background-color: #8b847f;
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+    border: 2px solid #2b2422;
+    overflow: hidden;
+}
+
+.unitText {
+    font-size: 2rem;
+}
+
+.unitText3 {
+    text-align: right;
+    margin-top: -50px;
+    font-size: 4rem;
+}
+
+#FlowerImg {
+
+    top: 50%;
+    cursor: pointer;
+    animation-name: hover;
+    animation-duration: 3s;
+    animation-iteration-count: infinite;
+    user-select: none;
+    position: relative;
+    z-index: 1;
+}
+
+#navBar {
+    height: 100%;
+    display: flex;
+    justify-content: right;
+}
+
+#navBar2 {
+    justify-self: center;
+    top: 10%;
+    text-align: center;
+}
+
+#nameText {
+    line-height: 0;
+    margin-top: -100px;
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+#ScoreText {
+    text-align: center;
+    cursor: default;
+    line-height: 0;
+    position: relative;
+    z-index: 1;
+}
+
+#ScoreText2 {
+    text-align: center;
+    cursor: default;
+    position: relative;
+    z-index: 1;
+}
+
+.navBarText {
+    font-weight: 700;
+    padding: 1rem;
+    font-size: 1rem;
+    text-align: right;
+    cursor: pointer;
+    justify-content: flex-end;
+}
+
+@keyframes hover {
+    0% {
+        margin-top: 40vh;
+    }
+
+    40% {
+        margin-top: 45vh;
+    }
+
+    100% {
+        margin-top: 40vh;
+    }
+}
+
+canvas {
+    height: 100%;
+    width: 100%;
+    position:absolute;
+    top: -0.5%;
+    left: -1%;
+    z-index: 0;
+}

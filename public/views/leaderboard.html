@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <!-- META -->
+    <title>Flower Clicker Leaderboard</title>
+
+    <!-- STYLE -->
+    <link rel="stylesheet" href="/css/leaderboard.css">
+</head>
+<body>
+
+    <div class="wrapper">
+        <div class="container1">
+            <div id="navBar">
+                <a class="navBarText" onclick="href='/leaderboard'">Reload</a>
+                <a class="navBarText" onclick="href='/'">Return</a>
+            </div>
+        </div>
+
+        <div class="container2">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Name</th>
+                        <th>Highest score</th>
+                    </tr>
+                </thead>
+
+                <tbody id="dataTable"></tbody>
+            </table>
+        </div>
+
+    </div>
+    <!-- SCRIPTS -->
+    <script src="/js/main.js"></script>
+    <script>
+        window.onload = () => {
+            loadTableData(dataTable)
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,93 @@
+body {
+    background-image: url('/img/Background.png');
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-size: cover;
+}
+
+a {
+    font-family: 'Comic Sans MS';
+    user-select: none;
+    color: white;
+}
+
+h1 {
+    font-family: 'Comic Sans MS';
+    user-select: none;
+    color: white;
+}
+
+.wrapper {
+    display: grid;
+    border: 5px solid black;
+    height: 97vh;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 11fr;
+    background-color: rgb(0, 0, 0, 0.8);
+}
+
+.wrapper {
+    display: grid;
+    border: 5px solid #4D596D;
+    height: 97vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 0.11fr auto;
+    background-color: rgb(27, 39, 59, 0.8);
+}
+
+.container1 {
+    border: 2px solid #4D596D;
+    grid-column-start: 1;
+    grid-column-end: 2;
+}
+
+.container2 {
+    border: 2px solid #4D596D;
+}
+
+.container3 {
+    border: 2px solid #4D596D;
+}
+
+.container4 {
+    border: 2px solid #4D596D;
+}
+
+.container5 {
+    border: 2px solid #4D596D;
+}
+
+.container6 {
+    border: 2px solid #4D596D;
+}
+
+.container7 {
+    border: 2px solid #4D596D;
+}
+
+.container8 {
+    border: 2px solid #4D596D;
+}
+
+.container9 {
+    border: 2px solid #4D596D;
+}
+
+.container10 {
+    border: 2px solid #4D596D;
+}
+
+#navBar {
+    height: 100%;
+    display: flex;
+    justify-content: right;
+}
+
+.navBarText {
+    font-weight: 700;
+    padding: 1rem;
+    font-size: 1rem;
+    text-align: right;
+    cursor: pointer;
+    justify-content: flex-end;
+}
