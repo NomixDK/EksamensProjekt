@@ -1,24 +1,26 @@
-let currentScore = 100;
+let currentScore = 0;
 let click = 1;
 let amount = 1;
 let SPS = 0;
-
+let tempDataTable;
 //LEADERBOARD
 
+/* DOESNT WORK
 let dataTable = [
     { name: 'A', highscore: 1 },
-    { name: 'B', highscore: 5 },
-    { name: 'C', highscore: 4 },
-    { name: 'D', highscore: 2 },
-    { name: 'E', highscore: 3 },
+    { name: 'B', highscore: 1 },
+    { name: 'C', highscore: 1 },
+    { name: 'D', highscore: 1 },
+    { name: 'E', highscore: 1 },
 ];
+*/ 
 
 function loadTableData(dataTable) {
     const tableBody = document.getElementById("dataTable");
     let dataHtml = "";
 
     for (let user of dataTable) {
-        dataHtml += `<tr><td>${user.name}</td><td>${user.highscore}</td></tr>`;
+        dataHtml += `<tr><td>${user.name}</td><td>${user.score}</td></tr>`;
     }
 
     tableBody.innerHTML = dataHtml;
@@ -35,7 +37,7 @@ function PageLoad() {
     let tempname = localStorage.getItem("username");
     console.log(name);
     if (tempname == undefined) {
-        console.log("something");
+        console.log("new user");
 
         name = window.prompt("Enter name");
         while (name == null) {
@@ -43,9 +45,11 @@ function PageLoad() {
         } if (name != null) {
             name = name + "'s flower business";
         }
-
+        let tempHash = Math.random().toString(36).replace(/[^a-z, 0-9]+/g, '').substr(0, 20);
+        localStorage.setItem("HashName", tempHash);
         document.getElementById("nameText").innerHTML = name;
         localStorage.setItem("username", name);
+        insertHighscore();
     } else {
         name = localStorage.getItem("username");
         document.getElementById("nameText").innerHTML = name;
@@ -111,9 +115,68 @@ function Save() {
     localStorage.setItem("tempCountries", Country.unitAmount);
     localStorage.setItem("tempContinents", Continent.unitAmount);
     localStorage.setItem("tempPlanets", Planet.unitAmount);
+
+    updateHighscore();
     window.alert("Saved");
     console.log("SAVED");
 }
+
+//SCORE SYSTEM
+function insertHighscore() {
+
+    let data = {
+        name: localStorage.getItem("username"),
+        score: localStorage.getItem("tempPlantContainers"),
+        hash: localStorage.getItem("HashName")
+    }
+
+    fetch('./highscore', {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Highscore inserted:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+}
+
+function updateHighscore() {
+
+    let data = {
+        name: localStorage.getItem("username"),
+        score: localStorage.getItem("tempPlantContainers"),
+        hash: localStorage.getItem("HashName")
+    }
+
+    fetch('./highscore', {
+        method: 'PUT',
+        headers: {
+            'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(data),
+    })
+        .then(response => response.json())
+        .then(data => {
+            console.log('Highscore updated:', data);
+        })
+        .catch((error) => {
+            console.error('Error:', error);
+        });
+}
+
+function getHighscores() {
+    fetch('./highscores')
+        .then(response => response.json())
+        .then(data => alert(JSON.stringify(data)));
+}
+
+
 //RENAME
 function Rename() {
     name = window.prompt("Enter new name");
@@ -141,7 +204,7 @@ function ClearStorage() {
 
 //CANVAS
 const canvas = document.querySelector("canvas");
-const ctx = canvas.getContext("2d")
+const ctx = canvas.getContext("2d");
 console.log(canvas);
 const flower1 = document.getElementById('source1');
 
